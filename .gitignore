@@ -1,0 +1,11 @@
+*.egg-info
+*.pot
+*.pyc
+*.pyo
+__pycache__
+MANIFEST
+dist/
+htmlcov/
+htmlcov/*
+build/
+.coverage
