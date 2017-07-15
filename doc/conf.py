@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 #
 # ambre documentation build configuration file, created by
-# sphinx-quickstart on Fri Jul  7 17:51:21 2017.
+# sphinx-quickstart on Fri Jul  7 22:09:03 2017.
 #
 # This file is execfile()d with the current directory set to its
 # containing dir.
@@ -47,8 +47,8 @@ master_doc = 'index'
 
 # General information about the project.
 project = 'ambre'
-copyright = '2017, Guillaume Roche / Anatole Gaudin / Marc Souply / Louanne Roger'
-author = 'Guillaume Roche / Anatole Gaudin / Marc Souply / Louanne Roger'
+copyright = '2017, Guillaume Roche / Marc Souply / Anatole Gaudin / Louanne Roger'
+author = 'Guillaume Roche / Marc Souply / Anatole Gaudin / Louanne Roger'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -143,7 +143,7 @@ latex_elements = {
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
     (master_doc, 'ambre.tex', 'ambre Documentation',
-     'Guillaume Roche / Anatole Gaudin / Marc Souply / Louanne Roger', 'manual'),
+     'Guillaume Roche / Marc Souply / Anatole Gaudin / Louanne Roger', 'manual'),
 ]
 
 
