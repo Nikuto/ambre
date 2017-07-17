@@ -53,7 +53,7 @@ To run the tests+coverage:
 ```bash
 coverage erase # to delete the previous coverage report
 coverage run --source=ambre setup.py test # run the tests
-coverage report # report you in % the tests' coverage
+coverage report # report in % the tests' coverage
 ```
 You can generate webpage showing what's tested and what's not via the following command:
 ```bash
@@ -64,5 +64,5 @@ To run flake8:
 ```bash
 flake8
 ```  
-There is the configuration of flake8 in `setup.cfg`, especially exclusion of useless directories during the check
+The flake8's configuration is in `setup.cfg`, especially exclusion of useless directories during the check
 
