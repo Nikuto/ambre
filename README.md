@@ -1,5 +1,6 @@
 # ambre
 
+## Setting the working environment
 We need few tools in order to setup a proper environment, be able to build (produce the wheel file) and install the project (from a .whl file, put our sources and the dependencies in one of the PYTHONPATH variable's directory).
 
 What's a python wheel ?
@@ -32,3 +33,16 @@ Some packages will be used to statically check the code or give the coverage of 
 ```bash
 pip install -r requirements.txt
 ```  
+You should now have all the tools we'll used for the project  
+
+## Building and installation of the project  
+Our project is no different than any other dependencies we could use, it's a python package thus will be builded using wheel and installed via pip  
+To build the project use:
+```bash
+python setup.py bdist_wheel # create a wheel in a newly created dist directory
+```
+To install it use:
+```bash
+pip install -U dist/ambre-0.0-py3-none-any.whl # the filename change every version
+```  
+You should now see the installed package in your virtualenv under /venv/lib/python3.4/site-packages/ambre/
