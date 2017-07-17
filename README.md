@@ -24,5 +24,11 @@ source path/to/venv/bin/activate # or the right activation file according to you
 *On windows*
 ```powershell
 \path\to\venv\Scripts\activate
-```
+```  
 
+Once activated every packages installed will be located in the virtualenv's site-packages directory (/venv/lib/python3.4/site-packages for a virtualenv named venv with python3.4).  
+The tool used to install external packages is pip and is shipped with python. When building the project, all the python packages needed are automatically downloaded, the external dependencies such as a C library aren't though.  
+Some packages will be used to statically check the code or give the coverage of the tests thus, type the following command to get all the required tools:
+```bash
+pip install -r requirements.txt
+```  
