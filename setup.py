@@ -22,9 +22,11 @@ setup(
     ],
     classifiers=[
         "Development Status :: 1 - Planning",
+        "Programming Language :: Python :: 3.4",
+        "Programming Language :: Python :: 3.5",
         "Programming Language :: Python :: 3.6",
         "Topic :: Scientific/Engineering :: Information Analysis"
     ],
-    test_suite='tests'
+    test_suite='ambre.tests'
 )
 print(find_packages())
