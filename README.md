@@ -1,17 +1,17 @@
 # ambre
 
 ## Setting the working environment
-We need few tools in order to setup a proper environment, be able to build (produce the wheel file) and install the project (from a .whl file, put our sources and the dependencies in one of the PYTHONPATH variable's directory).
+We need few tools in order to setup a proper environment, be able to build (produce the wheel file) and install the project (from a .whl file, put our sources and the dependencies in one of the `PYTHONPATH` variable's directory).
 
-What's a python wheel ?
+What's a python `wheel` ?
 > A built-package format for Python.  
-A wheel is a ZIP-format archive with a specially formatted filename and the .whl extension.  
+A wheel is a ZIP-format archive with a specially formatted filename and the `.whl` extension.  
 
-We'll use a virtualenv to keep a clean working environment and not be annoyed by dependency issues.
+We'll use a `virtualenv` to keep a clean working environment and not be annoyed by dependency issues.
 >virtualenv is a tool to create isolated Python environments.  
->The basic problem being addressed is one of dependencies and versions, and indirectly permissions. Imagine you have an application >that needs version 1 of LibFoo, but another application requires version 2. How can you use both these applications? If you >install everything into /usr/lib/python2.7/site-packages (or whatever your platform’s standard location is), it’s easy to end up >in a situation where you unintentionally upgrade an application that shouldn’t be upgraded.
+The basic problem being addressed is one of dependencies and versions, and indirectly permissions. Imagine you have an application that needs version 1 of LibFoo, but another application requires version 2. How can you use both these applications? If you install everything into /usr/lib/python2.7/site-packages (or whatever your platform’s standard location is), it’s easy to end up in a situation where you unintentionally upgrade an application that shouldn’t be upgraded.  
 
-A virtualenv in itself is a directory with another directory called scripts to activate this env, there is another directory lib where will be installed the different python package (the dependencies for example)  
+A virtualenv in itself is a directory with another directory called scripts to activate this env, there is another directory `lib` where will be installed the different python package (the dependencies for example)  
 
 To create a virtualenv:
 ```bash
@@ -27,8 +27,8 @@ source path/to/venv/bin/activate # or the right activation file according to you
 \path\to\venv\Scripts\activate
 ```  
 
-Once activated every packages installed will be located in the virtualenv's site-packages directory (/venv/lib/python3.4/site-packages for a virtualenv named venv with python3.4).  
-The tool used to install external packages is pip and is shipped with python. When building the project, all the python packages needed are automatically downloaded, the external dependencies such as a C library aren't though.  
+Once activated every packages installed will be located in the virtualenv's `site-packages` directory (`/venv/lib/python3.4/site-packages` for a virtualenv named venv with `python3.4`).  
+The tool used to install external packages is `pip` and is shipped with python. When building the project, all the python packages needed are automatically downloaded, the external dependencies such as a C library aren't though.  
 Some packages will be used to statically check the code or give the coverage of the tests thus, type the following command to get all the required tools:
 ```bash
 pip install -r requirements.txt
@@ -39,10 +39,30 @@ You should now have all the tools we'll used for the project
 Our project is no different than any other dependencies we could use, it's a python package thus will be builded using wheel and installed via pip  
 To build the project use:
 ```bash
-python setup.py bdist_wheel # create a wheel in a newly created dist directory
+python setup.py bdist_wheel # create a wheel in a newly appeared dist directory
 ```
 To install it use:
 ```bash
 pip install -U dist/ambre-0.0-py3-none-any.whl # the filename change every version
 ```  
-You should now see the installed package in your virtualenv under /venv/lib/python3.4/site-packages/ambre/
+You should now see the installed package in your virtualenv under `/venv/lib/python3.4/site-packages/ambre/`  
+
+## Code quality checking  
+To ensure a high quality and a project the least buggy possible you need to follow several steps of code checking. For now this phase is composed by some unit tests using the `unittest` python module fired by the module `coverage` (whose using is pretty self explanatory) and style consistency verification through `flake8`  
+To run the tests+coverage:  
+```bash
+coverage erase # to delete the previous coverage report
+coverage run --source=ambre setup.py test # run the tests
+coverage report # report in % the tests' coverage
+```
+You can generate webpage showing what's tested and what's not via the following command:
+```bash
+coverage html
+```  
+Then open `htmlcov/index.html` with your favorite browser  
+To run flake8:
+```bash
+flake8
+```  
+The flake8's configuration is in `setup.cfg`, especially exclusion of useless directories during the check
+
