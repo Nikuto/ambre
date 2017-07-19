@@ -45,8 +45,8 @@ You should now see the installed package in your virtualenv under `/venv/lib/pyt
 All the source files composing the program should be located in `ambre`. The tests are placed in `ambre/tests`, and `doc` is the .. documentation directory. setup.cfg is for the configuration of tools used, such as flake8. setup.py is used to build the package and requirements.txt contains the list of the python tools we use (flake8, coverage..)  
 
 ## Git strategy  
-* Fork
-* Add the base repository as a remote: `git remote add <name> <repo_url>`. Example: `git remote add upstream https://github.com/ftsn/ambre`
+* Fork the project on github and download the latter: `git clone <fork_url>`
+* Add the base repository as a remote to track its branches and be able to fetch the base repository's code: `git remote add <name> <repo_url>`. Example: `git remote add upstream https://github.com/ftsn/ambre`.
 * One branch per new feature: `git checkout -b <name>` to create a branch for the current one
 * Never develop on master
 * Write useful commit messages: describe every single sub-features your worked on
