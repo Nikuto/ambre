@@ -36,7 +36,7 @@ pip install -r requirements.txt
 You should now have all the tools we'll used for the project  
 
 ## Building and installation of the project  
-Our project is no different than any other dependencies we could use, it's a python package thus will be builded using wheel and installed via pip  
+Our project is no different than any other dependencies we could use, it's a python package thus will be builded using `wheel` and installed via `pip`  
 To build the project use:
 ```bash
 python setup.py bdist_wheel # create a wheel in a newly appeared dist directory
@@ -45,7 +45,32 @@ To install it use:
 ```bash
 pip install -U dist/ambre-0.0-py3-none-any.whl # the filename change every version
 ```  
-You should now see the installed package in your virtualenv under `/venv/lib/python3.4/site-packages/ambre/`  
+You should now see the installed package in your virtualenv under `/venv/lib/python3.4/site-packages/ambre/` (for a virtualenv named venv with `python3.4`)  
+
+## Project architecture  
+>.  
+├── README.md  
+├── ambre/  
+│   └── tests/      
+├── doc/  
+├── requirements.txt  
+├── setup.cfg  
+└── setup.py  
+
+All the source files composing the program should be located in `ambre`. The tests are placed in `ambre/tests`, and `doc` is the .. documentation directory. `setup.cfg` is for the configuration of tools used, such as `flake8`. `setup.py` is used to build the package and `requirements.txt` contains the list of the python tools we use (`flake8`, `coverage`..)  
+
+## Git strategy  
+* Fork
+* Add the base repository as a remote: `git remote add <name> <repo_url>`. Example: `git remote add upstream https://github.com/ftsn/ambre`
+* One branch per new feature: `git checkout -b <name>` to create a branch for the current one
+* Never develop on master
+* Write useful commit messages: describe every single sub-features your worked on
+* Regularly rebase the upstream master branch to stay up to date and assure an easy integration of your work:
+```bash
+git fetch upstream # upstream is the name of the remote
+git rebase upstream/master
+```
+* Dont hesitate to ask for a code review before opening a pull request to submist your code
 
 ## Code quality checking  
 To ensure a high quality and a project the least buggy possible you need to follow several steps of code checking. For now this phase is composed by some unit tests using the `unittest` python module fired by the module `coverage` (whose using is pretty self explanatory) and style consistency verification through `flake8`  
@@ -60,7 +85,7 @@ You can generate webpage showing what's tested and what's not via the following 
 coverage html
 ```  
 Then open `htmlcov/index.html` with your favorite browser  
-To run flake8:
+To run `flake8`:
 ```bash
 flake8
 ```  
