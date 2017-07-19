@@ -11,6 +11,7 @@ We'll use a virtualenv to keep a clean working environment and not be annoyed by
 >virtualenv is a tool to create isolated Python environments.  
 The basic problem being addressed is one of dependencies and versions, and indirectly permissions. Imagine you have an application that needs version 1 of LibFoo, but another application requires version 2. How can you use both these applications? If you install everything into `/usr/lib/python2.7/site-packages` (or whatever your platform’s standard location is), it’s easy to end up in a situation where you unintentionally upgrade an application that shouldn’t be upgraded.  
 
+Install it with `pip install virtualenv`  
 A virtualenv in itself is a directory with another directory called scripts to activate this env, there is another directory lib where will be installed the different python package (the dependencies for example)  
 
 To create a virtualenv: `virtualenv path/to/the/virtualenv`  
