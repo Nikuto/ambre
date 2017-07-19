@@ -15,8 +15,8 @@ A virtualenv in itself is a directory with another directory called scripts to a
 
 To create a virtualenv: `virtualenv path/to/the/virtualenv`  
 To activate it and gain access to the benefits of using a one:  
-*On Unix systems*: `source path/to/venv/bin/activate # or the right activation file according to your shell`  
-*On windows*: `\path\to\venv\Scripts\activate`  
+* *On Unix systems*: `source path/to/venv/bin/activate # or the right activation file according to your shell`  
+* *On windows*: `\path\to\venv\Scripts\activate`  
 
 Once activated every packages installed will be located in the virtualenv's site-packages directory (`/venv/lib/python3.4/site-packages` for a virtualenv named venv with python3.4).  
 The tool used to install external packages is pip and is shipped with python. When building the project, all the python packages needed are automatically downloaded, the external dependencies such as a C library aren't though.  
