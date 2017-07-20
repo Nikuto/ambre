@@ -46,7 +46,7 @@ All the source files composing the program should be located in `ambre`. The tes
 
 ## Git strategy  
 * Fork the project on github and download the latter: `git clone <fork_url>`
-* Add the base repository as a remote to track its branches and be able to fetch the base repository's code: `git remote add <name> <repo_url>`. Example: `git remote add upstream https://github.com/ftsn/ambre`.
+* Add the base repository as a remote to track its branches and be able to fetch the base repository's code: `git remote add <name> <repo_url>`. Example: `git remote add upstream https://github.com/ambre-project/ambre`.
 * One branch per new feature: `git checkout -b <name>` to create a branch for the current one
 * Never develop on master
 * Write useful commit messages: describe every single sub-features your worked on
