@@ -1,5 +1,5 @@
 # ambre
-![Build](https://travis-ci.org/ambre-project/ambre.svg?branch=master)
+[![Build Status](https://travis-ci.org/ambre-project/ambre.svg?branch=master)](https://travis-ci.org/ambre-project/ambre)  
 
 ## Setting the working environment
 We need few tools in order to setup a proper environment, be able to build (produce the wheel file) and install the project (from a .whl file, put our sources and the dependencies in one of the PYTHONPATH variable's directory).
